@@ -1,0 +1,12 @@
+{
+    "name": "raspeberry-info",
+    "description": "Flow to show info from rasbperry pi on a I2C oled display.",
+    "version": "0.0.1",
+    "dependencies": {},
+    "node-red": {
+        "settings": {
+            "flowFile": "flowRPI.json",
+            "credentialsFile": "flowRPI_cred.json"
+        }
+    }
+}
