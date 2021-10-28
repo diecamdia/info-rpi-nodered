@@ -1,1 +1,540 @@
-[]
+[
+    {
+        "id": "0cea533085c863ac",
+        "type": "tab",
+        "label": "Info",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "aa0c01e9d611539c",
+        "type": "oled-config",
+        "name": "",
+        "width": "128",
+        "height": "64",
+        "address": "3c"
+    },
+    {
+        "id": "ebf7eba9c0495921",
+        "type": "Clear",
+        "z": "0cea533085c863ac",
+        "name": "",
+        "display": "aa0c01e9d611539c",
+        "x": 630,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "67b473b1a241f953",
+        "type": "inject",
+        "z": "0cea533085c863ac",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 320,
+        "y": 40,
+        "wires": [
+            [
+                "ebf7eba9c0495921"
+            ]
+        ]
+    },
+    {
+        "id": "ef49e78d2d93b7c7",
+        "type": "Battery",
+        "z": "0cea533085c863ac",
+        "name": "",
+        "display": "aa0c01e9d611539c",
+        "x": 960,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "4cf848286d1d6387",
+        "type": "inject",
+        "z": "0cea533085c863ac",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 320,
+        "y": 80,
+        "wires": [
+            [
+                "dbcdba5a2fe87c1f"
+            ]
+        ]
+    },
+    {
+        "id": "e80d25003073c29a",
+        "type": "Turn-on",
+        "z": "0cea533085c863ac",
+        "name": "",
+        "display": "aa0c01e9d611539c",
+        "x": 640,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "97208b35633fb396",
+        "type": "Turn-off",
+        "z": "0cea533085c863ac",
+        "name": "",
+        "display": "aa0c01e9d611539c",
+        "x": 640,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "9eb18f2dac53e555",
+        "type": "inject",
+        "z": "0cea533085c863ac",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 320,
+        "y": 160,
+        "wires": [
+            [
+                "e80d25003073c29a"
+            ]
+        ]
+    },
+    {
+        "id": "c94153c539fc3d1d",
+        "type": "inject",
+        "z": "0cea533085c863ac",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 320,
+        "y": 200,
+        "wires": [
+            [
+                "97208b35633fb396"
+            ]
+        ]
+    },
+    {
+        "id": "dbcdba5a2fe87c1f",
+        "type": "function",
+        "z": "0cea533085c863ac",
+        "name": "",
+        "func": "msg.payload = {\n    x:3,\n    y:5,\n    p: 75\n}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 640,
+        "y": 80,
+        "wires": [
+            [
+                "ef49e78d2d93b7c7"
+            ]
+        ]
+    },
+    {
+        "id": "0cd284e4c2326e24",
+        "type": "Wifi",
+        "z": "0cea533085c863ac",
+        "name": "",
+        "display": "aa0c01e9d611539c",
+        "x": 970,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "3b8493de06209d8c",
+        "type": "inject",
+        "z": "0cea533085c863ac",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 320,
+        "y": 120,
+        "wires": [
+            [
+                "3ef33da9294a2961"
+            ]
+        ]
+    },
+    {
+        "id": "3ef33da9294a2961",
+        "type": "function",
+        "z": "0cea533085c863ac",
+        "name": "",
+        "func": "msg.payload = {\n    x:110,\n    y: 5,\n    p: 100\n}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 640,
+        "y": 120,
+        "wires": [
+            [
+                "0cd284e4c2326e24"
+            ]
+        ]
+    },
+    {
+        "id": "b45294fe63b671b4",
+        "type": "exec",
+        "z": "0cea533085c863ac",
+        "command": "hostname",
+        "addpay": "",
+        "append": "-I",
+        "useSpawn": "false",
+        "timer": "",
+        "winHide": true,
+        "oldrc": false,
+        "name": "IP Wifi",
+        "x": 450,
+        "y": 360,
+        "wires": [
+            [
+                "a2ce87dcd8f54290"
+            ],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "dffda749d3469808",
+        "type": "inject",
+        "z": "0cea533085c863ac",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "5",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "1",
+        "topic": "",
+        "payloadType": "date",
+        "x": 170,
+        "y": 380,
+        "wires": [
+            [
+                "b45294fe63b671b4",
+                "27224d1cca5be6ce",
+                "8455489b038c1a8e",
+                "63b00a2ea7029deb",
+                "d479b00187817a26",
+                "4d8037a03e02564c"
+            ]
+        ]
+    },
+    {
+        "id": "a2ce87dcd8f54290",
+        "type": "function",
+        "z": "0cea533085c863ac",
+        "name": "",
+        "func": "var data = msg.payload.split(' ');\nmsg.payload = {\n    size: 1,\n    x:2,\n    y:17,\n    text: 'IPw: ' + data[1]\n}\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 700,
+        "y": 360,
+        "wires": [
+            [
+                "4ba1bbc260a12543"
+            ]
+        ]
+    },
+    {
+        "id": "4ba1bbc260a12543",
+        "type": "String",
+        "z": "0cea533085c863ac",
+        "name": "OLED",
+        "display": "aa0c01e9d611539c",
+        "x": 963.3333333333333,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "27224d1cca5be6ce",
+        "type": "exec",
+        "z": "0cea533085c863ac",
+        "command": "top",
+        "addpay": "",
+        "append": "-bn1 | grep load | awk '{printf \"CPU Load: %.2f\", $(NF-2)}'",
+        "useSpawn": "false",
+        "timer": "",
+        "winHide": true,
+        "oldrc": false,
+        "name": "CPU LOAD",
+        "x": 470,
+        "y": 420,
+        "wires": [
+            [
+                "2e9beaabbfdbbe13"
+            ],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "2e9beaabbfdbbe13",
+        "type": "function",
+        "z": "0cea533085c863ac",
+        "name": "",
+        "func": "msg.payload = {\n    size: 1,\n    x:2,\n    y:27,\n    text: msg.payload\n}\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 700,
+        "y": 400,
+        "wires": [
+            [
+                "4ba1bbc260a12543"
+            ]
+        ]
+    },
+    {
+        "id": "8455489b038c1a8e",
+        "type": "exec",
+        "z": "0cea533085c863ac",
+        "command": "free",
+        "addpay": "",
+        "append": "-m | awk 'NR==2{printf \"Mem: %s/%sMB %.2f%%\", $3,$2,$3*100/$2 }'",
+        "useSpawn": "false",
+        "timer": "",
+        "winHide": true,
+        "oldrc": false,
+        "name": "MEMORY",
+        "x": 460,
+        "y": 480,
+        "wires": [
+            [
+                "427083aef239c0dc"
+            ],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "427083aef239c0dc",
+        "type": "function",
+        "z": "0cea533085c863ac",
+        "name": "",
+        "func": "msg.payload = {\n    size: 1,\n    x:2,\n    y:37,\n    text: msg.payload\n}\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 700,
+        "y": 440,
+        "wires": [
+            [
+                "4ba1bbc260a12543"
+            ]
+        ]
+    },
+    {
+        "id": "63b00a2ea7029deb",
+        "type": "exec",
+        "z": "0cea533085c863ac",
+        "command": "df",
+        "addpay": "",
+        "append": "-h | awk '$NF==\"/\"{printf \"Disk: %d/%dGB %s\", $3,$2,$5}'",
+        "useSpawn": "false",
+        "timer": "",
+        "winHide": true,
+        "oldrc": false,
+        "name": "Disc usage",
+        "x": 470,
+        "y": 540,
+        "wires": [
+            [
+                "80e183470b11e67a"
+            ],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "80e183470b11e67a",
+        "type": "function",
+        "z": "0cea533085c863ac",
+        "name": "",
+        "func": "msg.payload = {\n    size: 1,\n    x:2,\n    y:47,\n    text: msg.payload\n}\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 700,
+        "y": 480,
+        "wires": [
+            [
+                "4ba1bbc260a12543"
+            ]
+        ]
+    },
+    {
+        "id": "d479b00187817a26",
+        "type": "exec",
+        "z": "0cea533085c863ac",
+        "command": "iwconfig",
+        "addpay": "",
+        "append": "wlan0 | awk 'NR==6{printf $0}' | cut -d \"=\" -f3",
+        "useSpawn": "false",
+        "timer": "",
+        "winHide": false,
+        "oldrc": false,
+        "name": "Signal Level",
+        "x": 470,
+        "y": 600,
+        "wires": [
+            [
+                "894232e24d4a0af4"
+            ],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "894232e24d4a0af4",
+        "type": "function",
+        "z": "0cea533085c863ac",
+        "name": "",
+        "func": "msg.payload = {\n    size: 1,\n    x:2,\n    y:7,\n    text: \"Signal: \" + msg.payload\n}\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 700,
+        "y": 520,
+        "wires": [
+            [
+                "4ba1bbc260a12543"
+            ]
+        ]
+    },
+    {
+        "id": "4d8037a03e02564c",
+        "type": "exec",
+        "z": "0cea533085c863ac",
+        "command": "~/my-pi-temp.sh",
+        "addpay": "",
+        "append": "",
+        "useSpawn": "false",
+        "timer": "",
+        "winHide": false,
+        "oldrc": false,
+        "name": "Temperature",
+        "x": 470,
+        "y": 660,
+        "wires": [
+            [
+                "4c6728b806df30ed"
+            ],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "4c6728b806df30ed",
+        "type": "function",
+        "z": "0cea533085c863ac",
+        "name": "",
+        "func": "msg.payload = {\n    size: 1,\n    x:2,\n    y:57,\n    text: msg.payload\n}\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 700,
+        "y": 560,
+        "wires": [
+            [
+                "4ba1bbc260a12543"
+            ]
+        ]
+    }
+]
